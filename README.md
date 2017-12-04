@@ -1,4 +1,5 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@cycle/core.svg)]()
+[![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg)]()
 
 
 # Eat-Da-Burger
@@ -9,6 +10,6 @@
 * The app will store every burger in a database, whether devoured or not.
 
 ![Alt text](public/assets/img/ScreenShot001.png?raw=true "Home page")
-[![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg)]()
+
 
 ## Live demo:
