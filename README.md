@@ -1,5 +1,6 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@cycle/core.svg)]()
 [![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2017.svg)]()
 
 
 # Eat-Da-Burger
