@@ -1,9 +1,8 @@
 // Set up MySQL connection.
 const mysql = require("mysql");
-
 var connection;
 
-if(process.env.JAWSDB_URL) {
+if (process.env.JAWSDB_URL) {
   //Heroku production deployment
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
