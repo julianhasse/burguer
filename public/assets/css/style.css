@@ -1,0 +1,35 @@
+body {
+	background-color: #FCFCFC;
+}
+
+#title {
+	font-family: 'Titan one', cursive;
+	font-size: 60px;
+	color: rgb(255, 68, 5)
+}
+
+.headers1 {
+	font-family: 'Roboto Condensed', sans-serif;
+	color: rgb(255, 68, 5)	
+}
+
+.headers2 {
+	font-family: 'Roboto Condensed', sans-serif;
+	color:#428bca;	
+	}
+
+.burgerText {
+	font-family: 'Roboto Condensed', sans-serif;	
+	color: gray;
+	}
+
+
+#burgerPic {
+	height: 250px;
+	width: 250px; 
+}
+
+.buttonColor {
+	background-color:rgb(255, 68, 5);
+	color: white;
+}

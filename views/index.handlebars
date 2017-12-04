@@ -1,0 +1,62 @@
+<br>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<img id="burgerPic" src="/assets/img/burger.png" alt="hamburger" class="img-responsive center-block">
+			<div class="col-lg-12 text-center">
+				<h1 id="title">The Message is<br />Medium rare.</h1>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-lg-6 text-center">
+			<div id="uneaten">
+				<h2 class="headers1">Available Burgers <img src="/assets/img/burgerIcon.png" width="20px"> </h2>
+				{{#each burgers}}
+				{{#unless this.devoured}}
+					<h3 class="burgerText">{{this.burger_name}}
+					<form action="/{{this.id}}?_method=PUT" method="POST">
+						<input type="hidden" name="ate" value="true">
+						<button type='submit' class="btn btn-xs buttonColor">DEVOUR IT</button>
+					</form>
+					</h3>
+				{{/unless}}
+				{{/each}}
+			</div>
+		</div>
+		<div class="col-lg-6 text-center">
+			<div id="eaten">
+				<h2 class="headers2">Consumed Burgers <img src="/assets/img/burgerIconDimBlue.png" width="20px"></h2>
+				{{#each burgers}}
+				{{#if this.devoured}}
+				<h3 class="burgerText"><span class="glyphicon glyphicon-ok text-info" style="font-size:15px;"></span> {{this.burger_name}}</del>
+				<form action="/{{this.id}}?_method=PUT" method="POST">
+					<input type="hidden" name="ate" value="false">
+				</form>
+				</h3>
+				{{/if}}
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<div id="add">
+				<form class="create-update-form" action="/" method="POST">
+					<div class="form-group">
+						<textarea type="text" id="burger" name="name"  cols="50" placeholder='Enter a burger here and click Submit!'></textarea>
+					</div>
+					<br>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<br>
