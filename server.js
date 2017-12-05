@@ -1,6 +1,6 @@
 // *****************************************************************************
 // Server.js - This file is the initial starting point for the Node/Express server.
-// author: Julian Hasse
+// author: Julian Hasse 🍔 🍔 🍔 
 // ******************************************************************************
 
 const express = require("express");
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 // =============================================================
 app.use(methodOverride("_method"));
 
-// Set Handlebars.
+// Setup Handlebars.
 // =============================================================
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));

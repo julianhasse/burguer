@@ -1,11 +1,15 @@
-// Import MySQL connection.
+// *****************************************************************************
+// Orm.js - Helpers & SQL statement functions.
+// ******************************************************************************
+
+// Import <- MySQL connection.
 var connection = require("../config/connection.js");
 
 // Helper function for SQL syntax.
 function printQuestionMarks(num) {
-  var arr = [];
+  let arr = [];
 
-  for (var i = 0; i < num; i++) {
+  for (let i = 0; i < num; i++) {
     arr.push("?");
   }
 
@@ -14,9 +18,9 @@ function printQuestionMarks(num) {
 
 // Helper function for SQL syntax.
 function objToSql(ob) {
-  var arr = [];
+  let arr = [];
 
-  for (var key in ob) {
+  for (let key in ob) {
     if (Object.hasOwnProperty.call(ob, key)) {
       arr.push(key + "=" + ob[key]);
     }
@@ -27,7 +31,7 @@ function objToSql(ob) {
 
 // Object for all our SQL statement functions.
 var orm = {
-  selectAll: function(tableInput, cb) {
+  selectAll: (tableInput, cb) => {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
@@ -36,7 +40,7 @@ var orm = {
       cb(result);
     });
   },
-  insertOne: function(table, cols, vals, cb) {
+  insertOne: (table, cols, vals, cb) => {
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
@@ -48,7 +52,7 @@ var orm = {
 
     console.log(queryString);
 
-    connection.query(queryString, vals, function(err, result) {
+    connection.query(queryString, vals, (err, result) => {
       if (err) {
         throw err;
       }
@@ -56,7 +60,7 @@ var orm = {
     });
   },
   // An example of objColVals would be {name: Julian, cool: true}
-  updateOne: function(table, objColVals, condition, cb) {
+  updateOne: (table, objColVals, condition, cb) => {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
@@ -65,7 +69,7 @@ var orm = {
     queryString += condition;
 
     console.log(queryString);
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
       }
@@ -73,12 +77,12 @@ var orm = {
       cb(result);
     });
   },
-  delete: function(table, condition, cb) {
+  delete: (table, condition, cb) => {
     var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
 
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
       }

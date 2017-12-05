@@ -1,3 +1,7 @@
+// *****************************************************************************
+// Connection - This file stores credentials for the DB connection
+// ******************************************************************************
+
 // Set up MySQL connection.
 const mysql = require("mysql");
 var connection;
@@ -17,7 +21,7 @@ if (process.env.JAWSDB_URL) {
 };
 
 // Make connection.
-connection.connect(function(err) {
+connection.connect((err) => {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;

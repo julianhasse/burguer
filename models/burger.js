@@ -1,3 +1,8 @@
+// *****************************************************************************
+// Burger.js - DB functions.
+// ******************************************************************************
+
+// Import <- orm.js
 var orm = require("../config/orm.js");
 
 var burger = {
@@ -24,5 +29,5 @@ var burger = {
   }
 };
 
-// Export the database functions for the controller (burgerController.js).
+// Export db functions -> burger_Controller.js.
 module.exports = burger;

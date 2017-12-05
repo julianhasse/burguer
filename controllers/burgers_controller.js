@@ -1,10 +1,14 @@
+// *****************************************************************************
+// Create routes and set up logic within those routes where required.
+// ******************************************************************************
+
 const express = require("express");
 const router = express.Router();
 
-// Import the model (burger.js) to use its database functions.
+// Import the model  <- burger.js
 const burger = require("../models/burger.js");
 
-// Create routes and set up logic within those routes where required.
+
 router.get("/", function(req, res) {
   burger.allBurgers((data) => {
     var burgersObject = {
@@ -14,7 +18,8 @@ router.get("/", function(req, res) {
   });
 });
 
-//show burgers in db
+
+// Post
 router.post("/", function(req, res) {
 
   burger.createBurgers([
@@ -26,7 +31,7 @@ router.post("/", function(req, res) {
     });
 });
 
-//update a burger to eaten or not
+// Update
 router.put("/:id", function(req,res) {
   var condition = "id = " + req.params.id;
 
@@ -39,6 +44,7 @@ router.put("/:id", function(req,res) {
   });
 });
 
+// Delete
 router.delete("/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
@@ -47,5 +53,5 @@ router.delete("/:id", function(req, res) {
   });
 });
 
-// Export routes for server.js to use.
+// Export routes -> server.js
 module.exports = router;
